@@ -1,0 +1,2 @@
+# KIIT-attendance-API
+This is a flask API that fetches attendance from KIIT SAP portal and returns a JSON response. Uses a headless playwright chromium instance for scraping.
