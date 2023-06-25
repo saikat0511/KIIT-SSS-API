@@ -42,7 +42,7 @@ const getCookie = async (username, password) => {
 
   const cookie = response.headers.getSetCookie()[0].split(";")[0];
 
-  return cookie;
+  return { cookie: cookie };
 };
 
 export default getCookie;
