@@ -7,7 +7,7 @@ const cookieController = async (req, res) => {
     const cookie = await getCookie(username, password);
     return res.status(200).json(cookie);
   } catch (err) {
-    return res.status(401).json({ message: err.message });
+    return res.status(401).json({ error: err.message });
   }
 };
 

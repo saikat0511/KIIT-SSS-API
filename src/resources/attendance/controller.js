@@ -8,8 +8,7 @@ const attendanceController = async (req, res) => {
     const attendance = await getAttendance(cookie, year, session);
     return res.status(200).json(attendance);
   } catch (err) {
-    console.log(err);
-    return res.status(401).json({ message: err.message });
+    return res.status(401).json({ error: err.message });
   }
 };
 
