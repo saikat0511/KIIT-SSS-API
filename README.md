@@ -16,14 +16,42 @@ An express API that scrapes KIIT SAP Student Self Service portal. Live at https:
 ### Example: Request
 
 ```
-curl -X GET -H 'Content-Type: application/json' -d '{"username": 6969696,"password":"Awesome@Password"}' https://kiit-sss.onrender.com/api/v1/cookie
+curl -X GET -H 'Content-Type: application/json' -d '{"username": xxxxxxx,"password":"YourPassword"}' https://kiit-sss.onrender.com/api/v1/cookie
 ```
 
 ### Example: Response
 
 ```
 {
-  "cookie": "MYSAPSSO2=aBigAssString"
+  "cookie": "MYSAPSSO2=cookievalue"
+}
+```
+
+## Get student info: [/info](https://kiit-sss.onrender.com/api/v1/info)
+
+### Query parameters
+
+| Name   | Type   |
+| ------ | ------ |
+| cookie | String |
+
+### Example: Request
+
+```
+curl -X GET -H 'Content-Type: application/json' -d '{"cookie": "MYSAPSSO2=cookievalue"}' https://kiit-sss.onrender.com/api/v1/info
+```
+
+### Example: Response
+
+```
+{
+  "school": "SCSE",
+  "rollNo": "xxxxxxx",
+  "name": "Your Name",
+  "regNo": "xxxxxxxxxx",
+  "program": "B.Tech.(Computer Science Engineering)",
+  "semester": "4th Stage",
+  "userImage": "http://link/to/your/pic.jpg"
 }
 ```
 
@@ -40,7 +68,7 @@ curl -X GET -H 'Content-Type: application/json' -d '{"username": 6969696,"passwo
 ### Example: Request
 
 ```
-curl -X GET -H 'Content-Type: application/json' -d '{"cookie": "MYSAPSSO2=aBigAssString", "year": 2022, "session": "Spring"}' https://kiit-sss.onrender.com/api/v1/attendance
+curl -X GET -H 'Content-Type: application/json' -d '{"cookie": "MYSAPSSO2=cookievalue", "year": 2022, "session": "Spring"}' https://kiit-sss.onrender.com/api/v1/attendance
 ```
 
 ### Example: Response
