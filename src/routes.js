@@ -11,7 +11,7 @@ import attendanceSchema from "./resources/attendance/requestSchema.js";
 const v1Router = new Router();
 
 v1Router.get("/cookie", validateResource(cookieSchema), cookieController);
-v1Router.get("/info", validateResource(infoSchema), infoController)
+v1Router.get("/info", validateResource(infoSchema), infoController);
 v1Router.get(
   "/attendance",
   validateResource(attendanceSchema),
